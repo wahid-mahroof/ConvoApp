@@ -1,0 +1,194 @@
+78511, "ctx":"initandlisten","msg":"Shutting down the Change Stream Expired Pre-images Remover"}
+{"t":{"$date":"2024-08-02T10:49:06.488-07:00"},"s":"I",  "c":"CONTROL",  "id":4784929, "ctx":"initandlisten","msg":"Acquiring the global lock for shutdown"}
+{"t":{"$date":"2024-08-02T10:49:06.488-07:00"},"s":"I",  "c":"-",        "id":4784931, "ctx":"initandlisten","msg":"Dropping the scope cache for shutdown"}
+{"t":{"$date":"2024-08-02T10:49:06.488-07:00"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"initandlisten","msg":"Now exiting"}
+{"t":{"$date":"2024-08-02T10:49:06.488-07:00"},"s":"I",  "c":"CONTROL",  "id":8423404, "ctx":"initandlisten","msg":"mongod shutdown complete","attr":{"Summary of time elapsed":{"Statistics":{"Enter terminal shutdown":"0 ms","Step down the replication coordinator for shutdown":"0 ms","Time spent in quiesce mode":"0 ms","Shut down FLE Crud subsystem":"0 ms","Shut down MirrorMaestro":"0 ms","Shut down WaitForMajorityService":"0 ms","Shut down the global connection pool":"0 ms","Shut down the replica set monitor":"0 ms","Shut down the migration util executor":"0 ms","Shut down the TTL monitor":"0 ms","Shut down expired pre-images remover":"0 ms","Shut down full-time data capture":"0 ms","shutdownTask total elapsed time":"0 ms"}}}}
+{"t":{"$date":"2024-08-02T10:49:06.488-07:00"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"initandlisten","msg":"Shutting down","attr":{"exitCode":48}}
+wahidmahroof@wahids-MacBook-Air ~ % showdatabases
+zsh: command not found: showdatabases
+wahidmahroof@wahids-MacBook-Air ~ % clear
+
+wahidmahroof@wahids-MacBook-Air ~ % cd ..
+wahidmahroof@wahids-MacBook-Air /Users % export PATH="/usr/local/opt/mongodb-community/bin:$PATH"
+wahidmahroof@wahids-MacBook-Air /Users % source ~/.bash_profile
+source: no such file or directory: /Users/wahidmahroof/.bash_profile
+wahidmahroof@wahids-MacBook-Air /Users % mongo --version
+zsh: command not found: mongo
+wahidmahroof@wahids-MacBook-Air /Users % mongod --version
+db version v6.0.16
+Build Info: {
+    "version": "6.0.16",
+    "gitVersion": "1bbe71e91a41b097b19d036dee47b861b3f27181",
+    "modules": [],
+    "allocator": "system",
+    "environment": {
+        "distarch": "aarch64",
+        "target_arch": "aarch64"
+    }
+}
+wahidmahroof@wahids-MacBook-Air /Users % brew uninstall mongodb-community
+Error: No such keg: /opt/homebrew/Cellar/mongodb-community
+wahidmahroof@wahids-MacBook-Air /Users % brew install mongodb-community
+==> Downloading https://formulae.brew.sh/api/formula.jws.json
+######################################################################### 100.0%
+==> Downloading https://formulae.brew.sh/api/cask.jws.json
+######################################################################### 100.0%
+==> Fetching mongodb/brew/mongodb-community
+==> Downloading https://fastdl.mongodb.org/osx/mongodb-macos-arm64-7.0.12.tgz
+######################################################################### 100.0%
+==> Installing mongodb-community from mongodb/brew
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /opt/homebrew
+Could not symlink bin/install_compass
+Target /opt/homebrew/bin/install_compass
+is a symlink belonging to mongodb-community@6.0. You can unlink it:
+  brew unlink mongodb-community@6.0
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite mongodb-community
+
+To list all files that would be deleted:
+  brew link --overwrite mongodb-community --dry-run
+
+Possible conflicting files are:
+/opt/homebrew/bin/install_compass -> /opt/homebrew/Cellar/mongodb-community@6.0/6.0.16/bin/install_compass
+/opt/homebrew/bin/mongod -> /opt/homebrew/Cellar/mongodb-community@6.0/6.0.16/bin/mongod
+/opt/homebrew/bin/mongos -> /opt/homebrew/Cellar/mongodb-community@6.0/6.0.16/bin/mongos
+==> Caveats
+To start mongodb/brew/mongodb-community now and restart at login:
+  brew services start mongodb/brew/mongodb-community
+==> Summary
+🍺  /opt/homebrew/Cellar/mongodb-community/7.0.12: 13 files, 267.2MB, built in 2 seconds
+==> Running `brew cleanup mongodb-community`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+wahidmahroof@wahids-MacBook-Air /Users % echo  $PATH
+/usr/local/opt/mongodb-community/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+wahidmahroof@wahids-MacBook-Air /Users % which mongo
+mongo not found
+wahidmahroof@wahids-MacBook-Air /Users % brew list
+==> Formulae
+brotli			libnghttp2		mongodb-database-tools
+c-ares			libuv			mongosh
+ca-certificates		mongodb-community	node
+icu4c			mongodb-community@6.0	openssl@3
+
+wahidmahroof@wahids-MacBook-Air /Users % grep mongodb
+^C
+wahidmahroof@wahids-MacBook-Air /Users % brew search mongo
+==> Formulae
+mongo-c-driver
+mongo-cxx-driver
+mongo-orchestration
+mongocli
+mongodb-atlas-cli
+mongodb/brew/libmongocrypt
+mongodb/brew/mongodb-community ✔
+mongodb/brew/mongodb-community-shell
+mongodb/brew/mongodb-community-shell@4.4
+mongodb/brew/mongodb-community@4.4
+mongodb/brew/mongodb-community@5.0
+mongodb/brew/mongodb-community@6.0 ✔
+mongodb/brew/mongodb-csfle
+mongodb/brew/mongodb-database-tools ✔
+mongodb/brew/mongodb-enterprise
+mongodb/brew/mongodb-enterprise@4.4
+mongodb/brew/mongodb-enterprise@5.0
+mongodb/brew/mongodb-enterprise@6.0
+mongodb/brew/mongodb-mongocryptd
+mongodb/brew/mongodb-mongocryptd@4.4
+mongodb/brew/mongodb-mongocryptd@5.0
+mongodb/brew/mongodb-mongocryptd@6.0
+mongoose
+mongosh ✔
+mono
+mon
+monero
+
+==> Casks
+font-noto-sans-mongolian                 mongodb-compass@beta
+gcollazo-mongodb                         mongodb-realm-studio
+mongodb-compass                          mongodbpreferencepane
+mongodb-compass-isolated-edition         mongotron
+mongodb-compass-readonly                 nosqlbooster-for-mongodb
+wahidmahroof@wahids-MacBook-Air /Users % brew install mongodb-community-shell
+==> Fetching mongodb/brew/mongodb-community-shell
+==> Downloading https://fastdl.mongodb.org/osx/mongodb-shell-macos-x86_64-5.0.28
+######################################################################### 100.0%
+==> Installing mongodb-community-shell from mongodb/brew
+==> Caveats
+To start mongodb/brew/mongodb-community-shell now and restart at login:
+  brew services start mongodb/brew/mongodb-community-shell
+==> Summary
+🍺  /opt/homebrew/Cellar/mongodb-community-shell/5.0.28: 9 files, 45.2MB, built in 0 seconds
+==> Running `brew cleanup mongodb-community-shell`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+wahidmahroof@wahids-MacBook-Air /Users % find/usr/local -name mongo
+zsh: no such file or directory: find/usr/local
+wahidmahroof@wahids-MacBook-Air /Users % brew install mongodb-community
+Warning: mongodb/brew/mongodb-community 7.0.12 is already installed, it's just not linked.
+To link this version, run:
+  brew link mongodb-community
+wahidmahroof@wahids-MacBook-Air /Users % brew update
+==> Updating Homebrew...
+Already up-to-date.
+wahidmahroof@wahids-MacBook-Air /Users % brew upgrade
+wahidmahroof@wahids-MacBook-Air /Users % mongodb --version
+zsh: command not found: mongodb
+wahidmahroof@wahids-MacBook-Air /Users % mongo --version
+zsh: bad CPU type in executable: mongo
+wahidmahroof@wahids-MacBook-Air /Users % mongod --versiomn
+Error parsing command line: unrecognised option '--versiomn'
+try 'mongod --help' for more information
+wahidmahroof@wahids-MacBook-Air /Users % mongod --version
+db version v6.0.16
+Build Info: {
+    "version": "6.0.16",
+    "gitVersion": "1bbe71e91a41b097b19d036dee47b861b3f27181",
+    "modules": [],
+    "allocator": "system",
+    "environment": {
+        "distarch": "aarch64",
+        "target_arch": "aarch64"
+    }
+}
+wahidmahroof@wahids-MacBook-Air /Users % brew uninstall mongodb-community
+Uninstalling /opt/homebrew/Cellar/mongodb-community/7.0.12... (13 files, 267.2MB)
+wahidmahroof@wahids-MacBook-Air /Users % brew install mongodb-community@6.0
+Warning: mongodb/brew/mongodb-community@6.0 6.0.16 is already installed and up-to-date.
+To reinstall 6.0.16, run:
+  brew reinstall mongodb-community@6.0
+wahidmahroof@wahids-MacBook-Air /Users %  brew reinstall mongodb-community@6.0
+==> Fetching mongodb/brew/mongodb-community@6.0
+==> Downloading https://fastdl.mongodb.org/osx/mongodb-macos-arm64-6.0.16.tgz
+Already downloaded: /Users/wahidmahroof/Library/Caches/Homebrew/downloads/85340567a5f906460fc9aca063d1e98700f7593f2a71a82b97fdd6bb3b704e63--mongodb-macos-arm64-6.0.16.tgz
+==> Reinstalling mongodb/brew/mongodb-community@6.0 
+==> Caveats
+To restart mongodb/brew/mongodb-community@6.0 after an upgrade:
+  brew services restart mongodb/brew/mongodb-community@6.0
+==> Summary
+🍺  /opt/homebrew/Cellar/mongodb-community@6.0/6.0.16: 12 files, 202.4MB, built in 1 second
+==> Running `brew cleanup mongodb-community@6.0`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+wahidmahroof@wahids-MacBook-Air /Users % which mongo
+/opt/homebrew/bin/mongo
+wahidmahroof@wahids-MacBook-Air /Users % brew list
+==> Formulae
+brotli			libnghttp2		mongodb-database-tools
+c-ares			libuv			mongosh
+ca-certificates		mongodb-community-shell	node
+icu4c			mongodb-community@6.0	openssl@3
+
+wahidmahroof@wahids-MacBook-Air /Users % mongo
+zsh: bad CPU type in executable: mongo
+wahidmahroof@wahids-MacBook-Air /Users % mongodb-community@6.0
+zsh: command not found: mongodb-community@6.0
+wahidmahroof@wahids-MacBook-Air /Users % mongo
+zsh: bad CPU type in executable: mongo
+wahidmahroof@wahids-MacBook-Air /Users % which mongo
+/opt/homebrew/bin/mongo
+wahidmahroof@wahids-MacBook-Air /Users % echo $PATH
+/usr/local/opt/mongodb-community/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+wahidmahroof@wahids-MacBook-Air /Users % 
